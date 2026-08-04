@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+
+:root {
+  --font-poppins: 'Poppins', system-ui, sans-serif;
+  --radius: 0.5rem;
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 27 91% 52%;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: var(--font-poppins);
+    background: #fff;
+    color: #1A1A1A;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Card hover */
+.article-card {
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+.article-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+  transform: translateY(-2px);
+}
+
+/* Article prose */
+.article-prose p { margin-bottom: 1.25rem; line-height: 1.8; }
+.article-prose h2 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: #111; }
+.article-prose h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: #111; }
+.article-prose blockquote { border-left: 4px solid #E87722; padding-left: 1.25rem; font-style: italic; color: #555; margin: 1.5rem 0; }
+.article-prose ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.article-prose li { margin-bottom: 0.5rem; line-height: 1.7; }
+
+/* Partners marquee */
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  animation: slide-left 30s linear infinite;
+  white-space: nowrap;
+}
+.partners-track:hover { animation-play-state: paused; }
+
+/* Carousel dots */
+.carousel-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  transition: background 0.3s, width 0.3s;
+  cursor: pointer;
+}
+.carousel-dot.active {
+  background: #E87722;
+  width: 24px;
+  border-radius: 4px;
+}
+
+html { scroll-behavior: smooth; }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #0AADA8; border-radius: 3px; }
+
+:focus-visible { outline: 2px solid #E87722; outline-offset: 2px; }
